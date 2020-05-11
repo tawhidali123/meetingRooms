@@ -25,15 +25,14 @@ function meetingRoom(arr){
   arr.sort((a,b) => a[0] - b[0])
 
   for(let i=0; i < arr.length; i++){
-    let iST = arr[i][0]
-    let iET = arr[i][1]
+    let iterEndTime = arr[i][1]
 
     if(occupiedRoom === 0){
       occupiedRoom++
-      endTime = iET
+      endTime = iterEndTime
     } else if(endTime > arr[i][0]){
       occupiedRoom ++
-      endTime = arr[i][1]
+      endTime = iterEndTime
     }
     
   }
@@ -41,5 +40,5 @@ function meetingRoom(arr){
   return occupiedRoom
 }
 
-meetingRoom([[0, 30],[5, 10],[15, 20]])
-// meetingRoom([[7,10],[2,4]])
+// meetingRoom([[0, 30],[5, 10],[15, 20]])
+meetingRoom([[7,10],[2,4]])
